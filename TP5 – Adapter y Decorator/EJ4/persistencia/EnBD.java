@@ -50,7 +50,7 @@ public class EnBD implements Respuesta {
 		} catch (SQLException e) {
 			throw new RuntimeException("No se pudo conectar a la BD. ", e);
 		} catch (Exception e) {
-			throw new RuntimeException("Error al insertar el item", e);
+			throw new RuntimeException("Error al insertar el listado de items", e);
 		}
 		System.out.println("Listado guardado en base de datos..");
 		return lista;
