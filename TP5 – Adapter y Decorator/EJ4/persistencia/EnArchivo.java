@@ -22,12 +22,11 @@ public class EnArchivo implements Respuesta {
 		String listadoJSON = this.call.run();
 		try {
 			Files.write(Paths.get(file.getPath()), listadoJSON.getBytes(), StandardOpenOption.WRITE);
+			System.out.println("Listado guardado en disco..");
 		} catch (IOException e) {
 			throw new RuntimeException("Error guardando la lista en el archivo...", e);
 		}
-		System.out.println("Listado guardado en disco..");
 		return listadoJSON;
-
 	}
 
 }

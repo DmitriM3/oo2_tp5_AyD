@@ -4,7 +4,6 @@ import java.io.File;
 
 import modelo.Report;
 import modelo.ReporteOriginal;
-import modelo.ReporteSinVerificarSobrescritura;
 import modelo.ReporteVerificarSobrescritura;
 
 public class Main2 {
@@ -15,9 +14,11 @@ public class Main2 {
 //		report.export(new File(ruta));
 //		System.out.println(report.verificacionDeExport());
 
-		Report rp = new ReporteSinVerificarSobrescritura(
-				new ReporteVerificarSobrescritura(new ReporteOriginal("Mi reporte dinamico 5")));
+		Report rp = new ReporteOriginal("Mi reporte dinamico 5");
 		rp.export(file);
+
+		Report rpV = new ReporteVerificarSobrescritura(new ReporteOriginal("Mi reporte dinamico 5"));
+		rpV.export(file);
 
 	}
 
